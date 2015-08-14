@@ -108,6 +108,41 @@ metrics_rf <- data.frame(binary_metrics(results_rf, as.numeric(data_to_use$prete
 metrics_rf[, c("classifier")] <- c("random_forests")
 metrics_all <- rbind(metrics_all, metrics_rf)  
 
+if(output_to_pdf)
+{
+  pdf(paste(figuresOutputPath,"figResultsSeIgnore.pdf", sep=""), width=8, height=7)#10 legend 8 no legend
+}
+p1 <- ggplot(metrics_all, aes (x = classifier, y = se, fill = classifier)) + 
+  geom_bar(stat = "identity") + 
+  scale_y_continuous("Se", limits=c(0,1)) +
+  scale_x_discrete("Classifier") +
+  theme(legend.position="none") +
+  theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
+  theme(axis.line=element_blank(),axis.text.x=element_blank()) +
+  ggtitle("Imbalanced data") 
+p1
+if(output_to_pdf)
+{
+  dev.off()
+}
+if(output_to_pdf)
+{
+  pdf(paste(figuresOutputPath,"figResultsSpIgnore.pdf", sep=""), width=8, height=7)#10 legend 8 no legend
+}
+p2 <- ggplot(metrics_all, aes (x = classifier, y = sp, fill = classifier)) + 
+  geom_bar(stat = "identity") + 
+  scale_y_continuous("Sp", limits=c(0,1)) +
+  scale_x_discrete("Classifier") +
+  theme(legend.position="none") +
+  theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
+  theme(axis.line=element_blank(),axis.text.x=element_blank()) +
+  ggtitle("Imbalanced data") 
+p2
+if(output_to_pdf)
+{
+  dev.off()
+}
+
 #to_print <- metrics_all[, c("se", "sp", "auc", "classifier")]
 #design.table <- xtable(to_print)
 #print(design.table, floating=FALSE, include.rownames=FALSE )
@@ -187,6 +222,41 @@ metrics_rf <- data.frame(binary_metrics(results_rf, as.numeric(data_to_use$prete
 metrics_rf[, c("classifier")] <- c("random_forests")
 metrics_all <- rbind(metrics_all, metrics_rf)  
 
+if(output_to_pdf)
+{
+  pdf(paste(figuresOutputPath,"figResultsSeUndersampling.pdf", sep=""), width=8, height=7)#10 legend 8 no legend
+}
+p1 <- ggplot(metrics_all, aes (x = classifier, y = se, fill = classifier)) + 
+  geom_bar(stat = "identity") + 
+  scale_y_continuous("Se", limits=c(0,1)) +
+  scale_x_discrete("Classifier") +
+  theme(legend.position="none") +
+  theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
+  theme(axis.line=element_blank(),axis.text.x=element_blank()) +
+  ggtitle("Undersampling") 
+p1
+if(output_to_pdf)
+{
+  dev.off()
+}
+if(output_to_pdf)
+{
+  pdf(paste(figuresOutputPath,"figResultsSpUndersampling.pdf", sep=""), width=8, height=7)#10 legend 8 no legend
+}
+p2 <- ggplot(metrics_all, aes (x = classifier, y = sp, fill = classifier)) + 
+  geom_bar(stat = "identity") + 
+  scale_y_continuous("Sp", limits=c(0,1)) +
+  scale_x_discrete("Classifier") +
+  theme(legend.position="none") +
+  theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
+  theme(axis.line=element_blank(),axis.text.x=element_blank()) +
+  ggtitle("Undersampling") 
+p2
+if(output_to_pdf)
+{
+  dev.off()
+}
+
 #to_print <- metrics_all[, c("se", "sp", "auc", "classifier")]
 #design.table <- xtable(to_print)
 #print(design.table, floating=FALSE, include.rownames=FALSE )
@@ -260,6 +330,41 @@ metrics_rf <- data.frame(binary_metrics(results_rf, as.numeric(data_to_use_smote
 metrics_rf[, c("classifier")] <- c("random_forests")
 metrics_all <- rbind(metrics_all, metrics_rf)  
 
+if(output_to_pdf)
+{
+  pdf(paste(figuresOutputPath,"figResultsSeOversamplingBad.pdf", sep=""), width=8, height=7)#10 legend 8 no legend
+}
+p1 <- ggplot(metrics_all, aes (x = classifier, y = se, fill = classifier)) + 
+  geom_bar(stat = "identity") + 
+  scale_y_continuous("Se", limits=c(0,1)) +
+  scale_x_discrete("Classifier") +
+  theme(legend.position="none") +
+  theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
+  theme(axis.line=element_blank(),axis.text.x=element_blank()) +
+  ggtitle("Oversampling done wrong") 
+p1
+if(output_to_pdf)
+{
+  dev.off()
+}
+if(output_to_pdf)
+{
+  pdf(paste(figuresOutputPath,"figResultsSpOversamplingBad.pdf", sep=""), width=8, height=7)#10 legend 8 no legend
+}
+p2 <- ggplot(metrics_all, aes (x = classifier, y = sp, fill = classifier)) + 
+  geom_bar(stat = "identity") + 
+  scale_y_continuous("Sp", limits=c(0,1)) +
+  scale_x_discrete("Classifier") +
+  theme(legend.position="none") +
+  theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
+  theme(axis.line=element_blank(),axis.text.x=element_blank()) +
+  ggtitle("Oversampling done wrong") 
+p2
+if(output_to_pdf)
+{
+  dev.off()
+}
+
 #to_print <- metrics_all[, c("se", "sp", "auc", "classifier")]
 #design.table <- xtable(to_print)
 #print(design.table, floating=FALSE, include.rownames=FALSE )
@@ -332,6 +437,41 @@ metrics_all <- rbind(metrics_all, metrics_svm)
 metrics_rf <- data.frame(binary_metrics(results_rf, as.numeric(data_to_use$preterm), class_of_interest = 2))
 metrics_rf[, c("classifier")] <- c("random_forests")
 metrics_all <- rbind(metrics_all, metrics_rf)  
+
+if(output_to_pdf)
+{
+  pdf(paste(figuresOutputPath,"figResultsSeOversamplingGood.pdf", sep=""), width=8, height=7)#10 legend 8 no legend
+}
+p1 <- ggplot(metrics_all, aes (x = classifier, y = se, fill = classifier)) + 
+  geom_bar(stat = "identity") + 
+  scale_y_continuous("Se", limits=c(0,1)) +
+  scale_x_discrete("Classifier") +
+  theme(legend.position="none") +
+  theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
+  theme(axis.line=element_blank(),axis.text.x=element_blank()) +
+  ggtitle("Oversampling done properly") 
+p1
+if(output_to_pdf)
+{
+  dev.off()
+}
+if(output_to_pdf)
+{
+  pdf(paste(figuresOutputPath,"figResultsSpOversamplingGood.pdf", sep=""), width=8, height=7)#10 legend 8 no legend
+}
+p2 <- ggplot(metrics_all, aes (x = classifier, y = sp, fill = classifier)) + 
+  geom_bar(stat = "identity") + 
+  scale_y_continuous("Sp", limits=c(0,1)) +
+  scale_x_discrete("Classifier") +
+  theme(legend.position="none") +
+  theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
+  theme(axis.line=element_blank(),axis.text.x=element_blank()) +
+  ggtitle("Oversampling done properly") 
+p2
+if(output_to_pdf)
+{
+  dev.off()
+}
 
 #to_print <- metrics_all[, c("se", "sp", "auc", "classifier")]
 #design.table <- xtable(to_print)
