@@ -119,7 +119,9 @@ p1 <- ggplot(metrics_all, aes (x = classifier, y = se, fill = classifier)) +
   theme(legend.position="none") +
   theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
   theme(axis.line=element_blank(),axis.text.x=element_blank()) +
-  ggtitle("Imbalanced data") 
+  ggtitle("Imbalanced data") +
+  scale_fill_brewer(palette="Pastel2") +
+  scale_color_brewer(palette="Pastel2")
 p1
 if(output_to_pdf)
 {
@@ -136,7 +138,9 @@ p2 <- ggplot(metrics_all, aes (x = classifier, y = sp, fill = classifier)) +
   theme(legend.position="none") +
   theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
   theme(axis.line=element_blank(),axis.text.x=element_blank()) +
-  ggtitle("Imbalanced data") 
+  ggtitle("Imbalanced data") +
+  scale_fill_brewer(palette="Pastel2") +
+  scale_color_brewer(palette="Pastel2")
 p2
 if(output_to_pdf)
 {
@@ -233,7 +237,9 @@ p1 <- ggplot(metrics_all, aes (x = classifier, y = se, fill = classifier)) +
   theme(legend.position="none") +
   theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
   theme(axis.line=element_blank(),axis.text.x=element_blank()) +
-  ggtitle("Undersampling") 
+  ggtitle("Undersampling") +
+  scale_fill_brewer(palette="Pastel2") +
+  scale_color_brewer(palette="Pastel2")
 p1
 if(output_to_pdf)
 {
@@ -250,7 +256,9 @@ p2 <- ggplot(metrics_all, aes (x = classifier, y = sp, fill = classifier)) +
   theme(legend.position="none") +
   theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
   theme(axis.line=element_blank(),axis.text.x=element_blank()) +
-  ggtitle("Undersampling") 
+  ggtitle("Undersampling") +
+  scale_fill_brewer(palette="Pastel2") +
+  scale_color_brewer(palette="Pastel2")
 p2
 if(output_to_pdf)
 {
@@ -341,7 +349,9 @@ p1 <- ggplot(metrics_all, aes (x = classifier, y = se, fill = classifier)) +
   theme(legend.position="none") +
   theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
   theme(axis.line=element_blank(),axis.text.x=element_blank()) +
-  ggtitle("Oversampling done wrong") 
+  ggtitle("Oversampling done wrong") +
+  scale_fill_brewer(palette="Pastel2") +
+  scale_color_brewer(palette="Pastel2")
 p1
 if(output_to_pdf)
 {
@@ -358,7 +368,9 @@ p2 <- ggplot(metrics_all, aes (x = classifier, y = sp, fill = classifier)) +
   theme(legend.position="none") +
   theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
   theme(axis.line=element_blank(),axis.text.x=element_blank()) +
-  ggtitle("Oversampling done wrong") 
+  ggtitle("Oversampling done wrong") +
+  scale_fill_brewer(palette="Pastel2") +
+  scale_color_brewer(palette="Pastel2")
 p2
 if(output_to_pdf)
 {
@@ -449,7 +461,9 @@ p1 <- ggplot(metrics_all, aes (x = classifier, y = se, fill = classifier)) +
   theme(legend.position="none") +
   theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
   theme(axis.line=element_blank(),axis.text.x=element_blank()) +
-  ggtitle("Oversampling done properly") 
+  ggtitle("Oversampling done properly") +
+  scale_fill_brewer(palette="Pastel2") +
+  scale_color_brewer(palette="Pastel2")
 p1
 if(output_to_pdf)
 {
@@ -466,7 +480,9 @@ p2 <- ggplot(metrics_all, aes (x = classifier, y = sp, fill = classifier)) +
   theme(legend.position="none") +
   theme(panel.background = element_rect(fill = 'white', colour = 'white')) +
   theme(axis.line=element_blank(),axis.text.x=element_blank()) +
-  ggtitle("Oversampling done properly") 
+  ggtitle("Oversampling done properly") +
+  scale_fill_brewer(palette="Pastel2") +
+  scale_color_brewer(palette="Pastel2")
 p2
 if(output_to_pdf)
 {
